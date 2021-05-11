@@ -50,7 +50,7 @@ elif [[ $SELECTED_TEST_SUITE == "full" ]]; then
   bundle install
 
   echo "Acceptance: Running the tests"
-  bundle exec rspec docker/spec/full/image_spec.rb
+  bundle exec rspec
 elif [[ $SELECTED_TEST_SUITE == "ubi8" ]]; then
   echo "building ubi8 docker images"
   cd $LS_HOME

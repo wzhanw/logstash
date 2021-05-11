@@ -40,6 +40,8 @@ if [[ $SELECTED_TEST_SUITE == "oss" ]]; then
   bundle install
 
   echo "Acceptance: Running the tests"
+  docker image list
+  docker ps
   bundle exec rspec docker/spec/oss/*_spec.rb
 elif [[ $SELECTED_TEST_SUITE == "full" ]]; then
   echo "building full docker images"
@@ -50,6 +52,8 @@ elif [[ $SELECTED_TEST_SUITE == "full" ]]; then
   bundle install
 
   echo "Acceptance: Running the tests"
+  docker image list
+  docker ps
   bundle exec rspec
 elif [[ $SELECTED_TEST_SUITE == "ubi8" ]]; then
   echo "building ubi8 docker images"

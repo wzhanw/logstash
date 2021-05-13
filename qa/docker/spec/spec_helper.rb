@@ -25,12 +25,29 @@ def find_image(flavor)
 end
 
 def create_container(image, options = {})
+  puts "creating container"
   image.run(nil, options)
 end
 
 def start_container(image, options={})
+  puts "start container"
   container = create_container(image, options)
-  wait_for_logstash(container)
+  puts container.inspect
+  puts "Pre run ogs:----------"
+  puts container.logs(stdout: true, stderr: true)
+  puts "----------------------"
+  begin
+    wait_for_logstash(container)
+    puts "Success Logs:---------"
+    puts container.logs(stdout: true, stderr: true)
+    puts "----------------------"
+  rescue => e
+    puts "Fail Logs:------------"
+    puts "Unable to start logstash #{e.inspect}"
+    puts container.logs(stdout: true, stderr: true)
+    puts "----------------------"
+    raise e
+  end
   container
 end
 

@@ -18,19 +18,37 @@ def qualified_version
 end
 
 def find_image(flavor)
-  Docker::Image.all.detect{
+  puts 'finding image'
+  conn = Docker.connection
+  puts "connection is #{conn}"
+  puts "ping - #{conn.ping}"
+  puts "info - #{conn.info}"
+  puts "images are #{conn.get('/images/json', {})}"
+
+  found = Docker::Image.all.detect{
       |image| image.info['RepoTags'].detect{
         |tag| tag == "docker.elastic.co/logstash/logstash-#{flavor}:#{qualified_version}"
     }}
+  puts found
+  found
 end
 
 def create_container(image, options = {})
-  puts "creating container"
+  ulimits = {
+      "Ulimits" => [{"Name" => "nofile", "Soft"=> 65535, "Hard" => 65535 },
+                    {"Name" => "nproc", "Soft"=> 65535, "Hard" => 65535 }]}
+
+  puts "options before merge #{options}"
+  if options['HostConfig'].nil?
+    options.merge!("HostConfig" => ulimits)
+  else
+    options['HostConfig'].merge!(ulimits)
+  end
+  puts "start container with options #{options}"
   image.run(nil, options)
 end
 
 def start_container(image, options={})
-  puts "start container"
   container = create_container(image, options)
   puts container.inspect
   puts "Pre run ogs:----------"

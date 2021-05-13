@@ -3,7 +3,7 @@ shared_examples_for 'the container is configured correctly' do |flavor|
   before do
     puts "finding image"
     @image = find_image(flavor)
-    puts "found image #{@image.inspact}, creating container"
+    puts "found image #{@image.inspect}, creating container"
     @container = create_container(@image, {})
   end
 

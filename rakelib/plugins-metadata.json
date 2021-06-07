@@ -218,8 +218,8 @@
     "skip-list": false
   },
   "logstash-filter-useragent": {
-    "default-plugins": true,
-    "skip-list": false
+    "default-plugins": false,
+    "skip-list": true
   },
   "logstash-filter-uuid": {
     "default-plugins": true,

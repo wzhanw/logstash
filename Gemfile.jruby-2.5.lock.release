@@ -279,8 +279,6 @@ GEM
       logstash-core-plugin-api (>= 1.60, <= 2.99)
     logstash-filter-urldecode (3.0.6)
       logstash-core-plugin-api (>= 1.60, <= 2.99)
-    logstash-filter-useragent (3.2.4-java)
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
     logstash-filter-uuid (3.0.5)
       logstash-core-plugin-api (>= 1.60, <= 2.99)
     logstash-filter-xml (4.1.1)
@@ -730,7 +728,6 @@ DEPENDENCIES
   logstash-filter-translate
   logstash-filter-truncate
   logstash-filter-urldecode
-  logstash-filter-useragent
   logstash-filter-uuid
   logstash-filter-xml
   logstash-input-azure_event_hubs

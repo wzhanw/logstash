@@ -177,13 +177,13 @@ namespace "artifact" do
   task "archives_oss" => ["prepare", "generate_build_metadata"] do
     #with bundled JDKs
     license_details = ['APACHE-LICENSE-2.0',"-oss", oss_excluder]
-    create_archive_pack(license_details, "x86_64", "linux", "windows", "darwin")
-    create_archive_pack(license_details, "arm64", "linux")
+    create_archive_pack(license_details, "x86_64", "linux")
+    #create_archive_pack(license_details, "arm64", "linux")
 
     #without JDK
-    system("./gradlew bootstrap") #force the build of Logstash jars
-    build_tar(*license_details, platform: '-no-jdk')
-    build_zip(*license_details, platform: '-no-jdk')
+    #system("./gradlew bootstrap") #force the build of Logstash jars
+    #build_tar(*license_details, platform: '-no-jdk')
+    #build_zip(*license_details, platform: '-no-jdk')
   end
 
   desc "Build an RPM of logstash with all dependencies"

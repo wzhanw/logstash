@@ -218,8 +218,8 @@
     "skip-list": false
   },
   "logstash-filter-useragent": {
-    "default-plugins": true,
-    "skip-list": false
+    "default-plugins": false,
+    "skip-list": true
   },
   "logstash-filter-uuid": {
     "default-plugins": true,
@@ -301,12 +301,12 @@
     "skip-list": true
   },
   "logstash-input-http": {
-    "default-plugins": true,
-    "skip-list": false
+    "default-plugins": false,
+    "skip-list": true
   },
   "logstash-input-http_poller": {
-    "default-plugins": true,
-    "skip-list": false
+    "default-plugins": false,
+    "skip-list": true
   },
   "logstash-input-imap": {
     "default-plugins": true,
@@ -386,9 +386,9 @@
     "skip-list": false
   },
   "logstash-input-tcp": {
-    "default-plugins": true,
+    "default-plugins": false,
     "core-specs": true,
-    "skip-list": false
+    "skip-list": true
   },
   "logstash-input-twitter": {
     "default-plugins": true,
@@ -453,8 +453,8 @@
     "skip-list": false
   },
   "logstash-output-http": {
-    "default-plugins": true,
-    "skip-list": false
+    "default-plugins": false,
+    "skip-list": true
   },
   "logstash-output-java_output_example": {
     "default-plugins": false,

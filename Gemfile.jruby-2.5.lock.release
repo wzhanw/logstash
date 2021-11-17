@@ -341,51 +341,14 @@ GEM
     logstash-input-generator (3.0.6)
       logstash-codec-plain
       logstash-core-plugin-api (>= 1.60, <= 2.99)
-    logstash-input-graphite (3.0.6)
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      logstash-input-tcp
     logstash-input-heartbeat (3.0.7)
       logstash-codec-plain
       logstash-core-plugin-api (>= 1.60, <= 2.99)
       stud
-    logstash-input-http (3.3.7-java)
-      jar-dependencies (~> 0.3, >= 0.3.4)
-      logstash-codec-plain
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-    logstash-input-http_poller (5.0.2)
-      logstash-codec-plain
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      logstash-mixin-http_client (~> 7)
-      rufus-scheduler (~> 3.0.9)
-      stud (~> 0.0.22)
-    logstash-input-imap (3.1.0)
-      logstash-codec-plain
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      mail (~> 2.6.3)
-      mime-types (= 2.6.2)
-      stud (~> 0.0.22)
-    logstash-input-jms (3.1.2-java)
-      jruby-jms (>= 1.2.0)
-      logstash-codec-json (~> 3.0)
-      logstash-codec-plain (~> 3.0)
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      semantic_logger (< 4.0.0)
-    logstash-input-pipe (3.0.7)
-      logstash-codec-plain
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      stud (~> 0.0.22)
     logstash-input-redis (3.6.1)
       logstash-codec-json
       logstash-core-plugin-api (>= 1.60, <= 2.99)
       redis (>= 4.0.1, < 5)
-    logstash-input-s3 (3.5.0)
-      logstash-core-plugin-api (>= 2.1.12, <= 2.99)
-      logstash-mixin-aws (>= 4.3.0)
-      stud (~> 0.0.18)
-    logstash-input-snmp (1.2.7)
-      logstash-codec-plain
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      stud (>= 0.0.22, < 0.1.0)
     logstash-input-snmptrap (3.0.6)
       logstash-codec-plain
       logstash-core-plugin-api (>= 1.60, <= 2.99)
@@ -406,19 +369,6 @@ GEM
       logstash-filter-date
       logstash-filter-grok
       stud (>= 0.0.22, < 0.1.0)
-    logstash-input-tcp (6.0.9-java)
-      logstash-codec-json
-      logstash-codec-json_lines
-      logstash-codec-line
-      logstash-codec-multiline
-      logstash-codec-plain
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-    logstash-input-twitter (4.0.3)
-      http-form_data (~> 2)
-      logstash-core-plugin-api (>= 1.60, <= 2.99)
-      public_suffix (~> 3)
-      stud (>= 0.0.22, < 0.1)
-      twitter (= 6.2.0)
     logstash-input-udp (3.4.1)
       logstash-codec-plain
       logstash-core-plugin-api (>= 1.60, <= 2.99)
@@ -742,8 +692,6 @@ DEPENDENCIES
   logstash-input-generator
   logstash-input-graphite
   logstash-input-heartbeat
-  logstash-input-http
-  logstash-input-http_poller
   logstash-input-imap
   logstash-input-jms
   logstash-input-pipe
@@ -754,7 +702,6 @@ DEPENDENCIES
   logstash-input-sqs
   logstash-input-stdin
   logstash-input-syslog
-  logstash-input-tcp
   logstash-input-twitter
   logstash-input-udp
   logstash-input-unix
